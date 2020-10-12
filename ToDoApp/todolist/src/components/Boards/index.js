@@ -23,11 +23,19 @@ export default class Main extends Component{
 
                 <div className="todo todo-item">
                     <h1>A fazer</h1>
+                
                     <ul>
-                        <li>
-                            
-                        </li>
+                        <li>Café</li>
+                        <li>Compras</li>
+                        <li>Roupa</li>
+                        <li>Café</li>
                     </ul>
+
+                    <div className="add-todo">
+                        <input type="text" placeholder="Digite um ToDo" />
+                        <button>Adicionar</button>
+                    </div>
+                    
                 </div>
 
                 <div className="doing todo-item">
