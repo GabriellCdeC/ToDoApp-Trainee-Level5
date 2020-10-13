@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 
 import Form from './components/Form'
-import TodoList from './components/TodoList'
+import Todo_Boards from './components/Todo_Boards'
 
 function App () {
 
@@ -10,33 +10,8 @@ function App () {
 
   const [inputText, setInputText] = useState('')
   const [todos, setTodos] = useState([])
-  const [status, setStatus] = useState('all')
-  const [filteredTodos, setFilterTodos] = useState([])
+  const [status, setStatus] = useState('all')  
 
-
-  useEffect(() =>{
-      filterHandler()
-  }, [todos, status])
-
-  const filterHandler = () =>{
-    switch (status) {
-      case 'completed':
-        setFilterTodos(todos.filter(todo => todo.completed === true))
-      break;
-
-      case 'doing':
-        setFilterTodos(todos.filter(todo => todo.completed === false && todo.doing === true))
-      break;
-      
-      case 'todo':
-        setFilterTodos(todos.filter(todo => todo.completed === false && todo.doing === false))
-      break;
-    
-      default:
-        setFilterTodos(todos)
-      break;
-    }
-  }
 
   return (
     <div className="App">
@@ -50,10 +25,9 @@ function App () {
         setStatus={setStatus}
       />
 
-      <TodoList 
+      <Todo_Boards 
         setTodos={setTodos} 
         todos={todos}
-        filteredTodos={filteredTodos}
       />
     </div>
   )

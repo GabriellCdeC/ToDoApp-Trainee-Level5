@@ -131,8 +131,31 @@ select {
   cursor: pointer;
   pointer-events: none;
 }
-/* Transition */
 
-.select:hover::after {
-  transform: scale(1.1);
+.todo-board{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: auto;
+  width: 100%;
+  color: white;
+  
 }
+
+.todo-board .todo-board-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.todo-board .doing{ 
+  border-left: solid 1px white;
+  
+}
+
+.todo-board .done{
+  border-left: solid 1px white;
+  
+}
+
+
